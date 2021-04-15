@@ -8,7 +8,7 @@ export function fetchWords() {
         return response.json();
       })
       .then((data) => {
-        console.log(data.data.words);
+        // console.log(data.data.words);
         dispatch(updateWords(data.data.words));
       });
   };

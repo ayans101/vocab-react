@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 
-import { Navbar, Home } from './';
+import { Navbar, Home, Page404 } from './';
 
 import { fetchWords } from '../actions/words';
 
@@ -50,6 +50,7 @@ class App extends React.Component {
                   return <Home {...props} words={words} />;
                 }}
               />
+              <Route component={Page404} />
             </Switch>
 
             <div className="right-nav">
