@@ -2,10 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 
+import Navbar from './Navbar';
+
 import { fetchWords } from '../actions/words';
 
 //  update material ui themes with ThemeProvider
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: ['"Kumbh Sans"', 'sans-serif'].join(','),
+  },
   palette: {
     primary: {
       main: '#38b6ff',
@@ -23,6 +28,7 @@ class App extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <div className="App">
+          <Navbar />
           <div className="main">
             <div className="list"></div>
           </div>
