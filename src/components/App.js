@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 
-import Navbar from './Navbar';
+import { Navbar, Home } from './';
 
 import { fetchWords } from '../actions/words';
 
@@ -33,30 +35,45 @@ class App extends React.Component {
   }
 
   render() {
+    const { words } = this.props;
     return (
       <ThemeProvider theme={theme}>
-        <div className="App">
-          <Navbar />
-          <div className="main">
-            <div className="list"></div>
-          </div>
-          <div className="right-nav">
-            <Button
-              className="add-new-button"
-              variant="contained"
-              color="primary"
-            >
+        <Router>
+          <div className="App">
+            <Navbar />
+
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={(props) => {
+                  return <Home {...props} words={words} />;
+                }}
+              />
+            </Switch>
+
+            <div className="right-nav">
+              <Button
+                className="add-new-button"
+                variant="contained"
+                color="primary"
+              >
                 <img
                   src="https://image.flaticon.com/icons/svg/1828/1828925.svg"
                   alt="add new"
                 />
-            </Button>
+              </Button>
+            </div>
           </div>
-        </div>
+        </Router>
       </ThemeProvider>
     );
   }
 }
+
+App.propTypes = {
+  words: PropTypes.array.isRequired,
+};
 
 function mapStateToProps(state) {
   return {
