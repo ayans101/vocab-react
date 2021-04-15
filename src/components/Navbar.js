@@ -2,8 +2,34 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 
+import { searchWords, refreshSearchResults } from '../actions/search';
+
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchText: '',
+    };
+  }
+
+  handleSearch = (e) => {
+    const { searchText } = this.state;
+
+    if (e.target.value) {
+      this.props.dispatch(searchWords(searchText));
+    } else {
+      this.props.dispatch(refreshSearchResults());
+    }
+
+    this.setState({
+      searchText: e.target.value,
+    });
+  };
+
   render() {
+    const { searchText } = this.state;
+    const { results } = this.props;
+
     return (
       <nav className="nav">
         <div className="search-container">
@@ -12,18 +38,22 @@ class Navbar extends Component {
             src="https://image.flaticon.com/icons/svg/483/483356.svg"
             alt="search-icon"
           />
-          <input type="text" placeholder="Search" />
-
-          <div className="search-results">
-            <ul>
-              <li className="search-results-row">
-                <span>resource</span>
-              </li>
-              <li className="search-results-row">
-                <span>revert</span>
-              </li>
-            </ul>
-          </div>
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={this.handleSearch}
+          />
+          {searchText && results.length > 0 && (
+            <div className="search-results">
+              <ul>
+                {results.map((word) => (
+                  <li className="search-results-row">
+                    <span>{word.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
         <div className="right-nav">
           <Button variant="contained" color="primary">
@@ -35,9 +65,9 @@ class Navbar extends Component {
   }
 }
 
-function mapStateToProps({ search }) {
+function mapStateToProps(state) {
   return {
-    search,
+    results: state.search.results,
   };
 }
 
