@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
 
 import { searchWords, refreshSearchResults } from '../actions/search';
 
@@ -54,11 +53,6 @@ class Navbar extends Component {
               </ul>
             </div>
           )}
-        </div>
-        <div className="right-nav">
-          <Button variant="contained" color="primary">
-            Add New
-          </Button>
         </div>
       </nav>
     );

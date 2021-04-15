@@ -25,7 +25,7 @@ input[type="text"] {
   }
 }
 .search-container {
-  width: 40%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   max-width: 400px;
@@ -48,7 +48,7 @@ input[type="text"] {
   outline: none;
 }
 .search-icon {
-  height: 20px;
+  height: 18px;
   position: absolute;
   top: 10px;
   left: 7px;
@@ -94,6 +94,14 @@ input[type="text"] {
   height: 27px;
 }
 
-nav .right-nav {
-  margin-right: auto;
+.right-nav {
+  /* border: 2px solid black; */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.add-new-button img{
+  height: 30px;
+  width: 30px;
+  padding: 12px 2px;
 }

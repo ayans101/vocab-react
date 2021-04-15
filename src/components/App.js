@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 import Navbar from './Navbar';
 
@@ -17,6 +18,13 @@ const theme = createMuiTheme({
       contrastText: '#fff',
     },
   },
+  overrides: {
+    MuiButton: {
+      root: {
+        borderRadius: 50,
+      },
+    },
+  },
 });
 
 class App extends React.Component {
@@ -31,6 +39,18 @@ class App extends React.Component {
           <Navbar />
           <div className="main">
             <div className="list"></div>
+          </div>
+          <div className="right-nav">
+            <Button
+              className="add-new-button"
+              variant="contained"
+              color="primary"
+            >
+                <img
+                  src="https://image.flaticon.com/icons/svg/1828/1828925.svg"
+                  alt="add new"
+                />
+            </Button>
           </div>
         </div>
       </ThemeProvider>
