@@ -128,7 +128,7 @@ input[type='text'] {
 .popup-inner {
   position: relative;
   padding: 32px;
-  width: 70%;
+  width: 60%;
   max-width: 400px;
   height: 100px;
   background-color: #fff;
@@ -173,4 +173,35 @@ input[type='text'] {
 .words-list-header{
   padding-top: 12px;
   padding-bottom: 10px;
+}
+
+.popup-inner-content {
+  position: relative;
+  padding: 32px;
+  width: 70vw;
+  border-radius: 20px;
+  /* border: 2px solid black; */
+  max-width: 600px;
+  height: 400px;
+  background-color: #fff;
+}
+.popup-inner-content .close-btn {
+  color: #38b6ff;
+  position: absolute;
+  top: 12px;
+  right: 0px;
+}
+.popup-inner-content .close-btn img{
+  color: #38b6ff;
+  height: 16px;
+  width: 16px;
+}
+.show-content-btn{
+  border: none;
+  background: inherit;
+  font-family: 'Kumbh Sans', sans-serif;
+  outline: none;
+}
+.show-content-btn:hover{
+  cursor: pointer;
 }
