@@ -1,4 +1,6 @@
+//  words
 export const UPDATE_WORDS = 'UPDATE_WORDS';
+export const ADD_WORD = 'ADD_WORD';
 
 // search
 export const FETCH_SEARCH_RESULTS_SUCCESS = 'FETCH_SEARCH_RESULTS_SUCCESS';
