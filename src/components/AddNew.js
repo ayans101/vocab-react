@@ -8,8 +8,15 @@ class AddNew extends Component {
     super(props);
     this.state = {
       showPopup: false,
+      searchText: '',
     };
   }
+
+  handleSearch = (e) => {
+    this.setState({
+      searchText: e.target.value,
+    });
+  };
 
   setPopup = (val) => {
     this.setState({
@@ -18,7 +25,7 @@ class AddNew extends Component {
   };
 
   render() {
-    const { showPopup } = this.state;
+    const { showPopup, searchText } = this.state;
     return (
       <div>
         <div className="right-nav">
@@ -34,7 +41,20 @@ class AddNew extends Component {
             />
           </Button>
           <PopUp trigger={showPopup} setTrigger={this.setPopup}>
-            <h3>My popup</h3>
+            <big>Add to Dictionary</big>
+            <br />
+            <br />
+            <small>New Word</small>
+            <br />
+            <input
+              className="inp"
+              placeholder="Type"
+              onChange={this.handleSearch}
+            />
+            <Button className="close-btn" onClick={() => this.setPopup(false)}>
+              cancel
+            </Button>
+            <Button className="add-btn" onClick={() => console.log(searchText)}>add</Button>
           </PopUp>
         </div>
       </div>
