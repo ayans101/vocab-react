@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Kumbh Sans", sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
 }
-input[type="text"] {
-  font-family: "Kumbh Sans", sans-serif;
+input[type='text'] {
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 /* NAVBAR */
@@ -102,8 +102,33 @@ input[type="text"] {
   bottom: 20px;
   right: 20px;
 }
-.add-new-button img{
+.add-new-button img {
   height: 30px;
   width: 30px;
   padding: 12px 2px;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-inner {
+  position: relative;
+  padding: 32px;
+  width: 70%;
+  max-width: 400px;
+  height: 100px;
+  background-color: #fff;
+}
+.popup-inner .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
