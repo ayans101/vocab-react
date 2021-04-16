@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 
 import { PopUp } from './';
+import { createWord } from '../actions/words';
 
 class AddNew extends Component {
   constructor(props) {
@@ -21,6 +23,15 @@ class AddNew extends Component {
   setPopup = (val) => {
     this.setState({
       showPopup: val,
+    });
+  };
+
+  handleOnClick = () => {
+    //  dispatch action
+    this.props.dispatch(createWord(this.state.searchText));
+    this.setState({
+      searchText: '',
+      showPopup: false,
     });
   };
 
@@ -49,12 +60,15 @@ class AddNew extends Component {
             <input
               className="inp"
               placeholder="Type"
+              value={searchText}
               onChange={this.handleSearch}
             />
             <Button className="close-btn" onClick={() => this.setPopup(false)}>
               cancel
             </Button>
-            <Button className="add-btn" onClick={() => console.log(searchText)}>add</Button>
+            <Button className="add-btn" onClick={this.handleOnClick}>
+              add
+            </Button>
           </PopUp>
         </div>
       </div>
@@ -62,4 +76,4 @@ class AddNew extends Component {
   }
 }
 
-export default AddNew;
+export default connect()(AddNew);
