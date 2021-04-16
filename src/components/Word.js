@@ -10,8 +10,7 @@ const useStyles = makeStyles({
   root: {
     width: '90vw',
     maxWidth: 800,
-    height: 100,
-    margin: 2
+    margin: 2,
   },
   bullet: {
     display: 'inline-block',
@@ -26,9 +25,15 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Word() {
+function getCap(name) {
+  let s = name;
+  return s[0].toUpperCase() + s.slice(1);
+}
+
+export default function Word(props) {
+  const { word } = props;
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+//   const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -41,15 +46,14 @@ export default function Word() {
           Word of the Day
         </Typography>
         <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
+          {/* be{bull}nev{bull}o{bull}lent */}
+          {getCap(word.name)}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+          {word.lexicalEntries[0].lexicalCategory.id}
         </Typography>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          {word.lexicalEntries[0].entries[0].senses[0].definitions[0]}
         </Typography>
       </CardContent>
       <CardActions>

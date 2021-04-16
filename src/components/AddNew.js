@@ -52,23 +52,28 @@ class AddNew extends Component {
             />
           </Button>
           <PopUp trigger={showPopup} setTrigger={this.setPopup}>
-            <big>Add to Dictionary</big>
-            <br />
-            <br />
-            <small>New Word</small>
-            <br />
-            <input
-              className="inp"
-              placeholder="Type"
-              value={searchText}
-              onChange={this.handleSearch}
-            />
-            <Button className="close-btn" onClick={() => this.setPopup(false)}>
-              cancel
-            </Button>
-            <Button className="add-btn" onClick={this.handleOnClick}>
-              add
-            </Button>
+            <div className="popup-inner">
+              <big>Add to Dictionary</big>
+              <br />
+              <br />
+              <small>New Word</small>
+              <br />
+              <input
+                className="inp"
+                placeholder="Type"
+                value={searchText}
+                onChange={this.handleSearch}
+              />
+              <Button
+                className="close-btn"
+                onClick={() => this.setPopup(false)}
+              >
+                cancel
+              </Button>
+              <Button className="add-btn" onClick={this.handleOnClick}>
+                add
+              </Button>
+            </div>
           </PopUp>
         </div>
       </div>
