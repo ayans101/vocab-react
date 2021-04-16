@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-import { Button } from '@material-ui/core';
 
-import { Navbar, Home, Page404 } from './';
+import { Navbar, Home, Page404, AddNew } from './';
 
 import { fetchWords } from '../actions/words';
 
@@ -53,18 +52,7 @@ class App extends React.Component {
               <Route component={Page404} />
             </Switch>
 
-            <div className="right-nav">
-              <Button
-                className="add-new-button"
-                variant="contained"
-                color="primary"
-              >
-                <img
-                  src="https://image.flaticon.com/icons/svg/1828/1828925.svg"
-                  alt="add new"
-                />
-              </Button>
-            </div>
+            <AddNew />
           </div>
         </Router>
       </ThemeProvider>

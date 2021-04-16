@@ -3,5 +3,6 @@ import Navbar from './Navbar';
 import Home from './Home';
 import Page404 from './Page404';
 import WordsList from './WordsList';
+import AddNew from './AddNew';
 
-export { App, Navbar, Home, Page404, WordsList };
+export { App, Navbar, Home, Page404, WordsList, AddNew };
