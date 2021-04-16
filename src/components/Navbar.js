@@ -47,10 +47,7 @@ class Navbar extends Component {
             <div className="search-results">
               <ul>
                 {results.map((word) => (
-                //   <li className="search-results-row">
-                //     <span>{word.name}</span>
-                //   </li>
-                <SearchLI word={word} />
+                  <SearchLI word={word} />
                 ))}
               </ul>
             </div>
