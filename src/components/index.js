@@ -7,5 +7,17 @@ import AddNew from './AddNew';
 import PopUp from './PopUp';
 import Word from './Word';
 import Content from './Content';
+import SearchLI from './SearchLI';
 
-export { App, Navbar, Home, Page404, WordsList, AddNew, PopUp, Word, Content };
+export {
+  App,
+  Navbar,
+  Home,
+  Page404,
+  WordsList,
+  AddNew,
+  PopUp,
+  Word,
+  Content,
+  SearchLI,
+};

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { SearchLI } from './';
 import { searchWords, refreshSearchResults } from '../actions/search';
 
 class Navbar extends Component {
@@ -46,9 +47,10 @@ class Navbar extends Component {
             <div className="search-results">
               <ul>
                 {results.map((word) => (
-                  <li className="search-results-row">
-                      <span>{word.name}</span>
-                  </li>
+                //   <li className="search-results-row">
+                //     <span>{word.name}</span>
+                //   </li>
+                <SearchLI word={word} />
                 ))}
               </ul>
             </div>
