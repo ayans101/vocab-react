@@ -47,7 +47,7 @@ class Navbar extends Component {
               <ul>
                 {results.map((word) => (
                   <li className="search-results-row">
-                    <span>{word.name}</span>
+                      <span>{word.name}</span>
                   </li>
                 ))}
               </ul>

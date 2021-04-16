@@ -24,7 +24,6 @@ const theme = createMuiTheme({
       root: {
         borderRadius: 50,
       },
-      zIndex: 10,
     },
   },
 });

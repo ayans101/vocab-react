@@ -6,5 +6,6 @@ import WordsList from './WordsList';
 import AddNew from './AddNew';
 import PopUp from './PopUp';
 import Word from './Word';
+import Content from './Content';
 
-export { App, Navbar, Home, Page404, WordsList, AddNew, PopUp, Word };
+export { App, Navbar, Home, Page404, WordsList, AddNew, PopUp, Word, Content };

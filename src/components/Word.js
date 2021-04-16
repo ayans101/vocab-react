@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import { PopUp } from './';
+import { PopUp, Content } from './';
 
 const useStyles = makeStyles({
   root: {
@@ -43,13 +43,6 @@ export default function Word(props) {
     <div>
       <Card className={classes.root} variant="outlined">
         <CardContent>
-          {/* <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
-        </Typography> */}
           <Typography variant="h5" component="h2">
             {/* be{bull}nev{bull}o{bull}lent */}
             {getCap(word.name)}
@@ -79,6 +72,7 @@ export default function Word(props) {
               alt="close-btn"
             />
           </Button>
+          <Content word={word} />
         </div>
       </PopUp>
     </div>
