@@ -59,6 +59,7 @@ export default function Word(props) {
           <button
             className="show-content-btn"
             onClick={() => setButtonPopup(true)}
+            hover={true}
           >
             Learn More
           </button>
@@ -68,7 +69,7 @@ export default function Word(props) {
         <div className="popup-inner-content">
           <Button className="close-btn" onClick={() => setButtonPopup(false)}>
             <img
-              src="https://image.flaticon.com/icons/svg/747/747953.svg"
+              src="/cancel.png"
               alt="close-btn"
             />
           </Button>

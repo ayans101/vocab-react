@@ -13,10 +13,10 @@ class Navbar extends Component {
   }
 
   handleSearch = (e) => {
-    const { searchText } = this.state;
+    // const { searchText } = this.state;
 
     if (e.target.value) {
-      this.props.dispatch(searchWords(searchText));
+      this.props.dispatch(searchWords(e.target.value));
     } else {
       this.props.dispatch(refreshSearchResults());
     }
@@ -35,7 +35,7 @@ class Navbar extends Component {
         <div className="search-container">
           <img
             className="search-icon"
-            src="https://image.flaticon.com/icons/svg/483/483356.svg"
+            src="/search.png"
             alt="search-icon"
           />
           <input

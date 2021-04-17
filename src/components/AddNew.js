@@ -47,7 +47,7 @@ class AddNew extends Component {
             onClick={() => this.setPopup(true)}
           >
             <img
-              src="https://image.flaticon.com/icons/svg/1828/1828925.svg"
+              src="/plus.png"
               alt="add new"
             />
           </Button>
